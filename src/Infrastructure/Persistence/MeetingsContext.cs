@@ -4,11 +4,11 @@ using System.Reflection;
 
 namespace Meetings.Infrastructure.Persistence;
 
-public class MeetingsDbContext : DbContext
+public class MeetingsContext : DbContext
 {
     public DbSet<Meeting> Meetings { get; set; } = null!;
 
-    public MeetingsDbContext(DbContextOptions<MeetingsDbContext> options) : base(options)
+    public MeetingsContext(DbContextOptions<MeetingsContext> options) : base(options)
     {
     }
 
