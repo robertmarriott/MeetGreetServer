@@ -1,6 +1,6 @@
-namespace MeetGreetServer.Application.MeetGreetServer.Queries.GetMeetings;
+namespace MeetGreetServer.Web.ApiModels.Meetings;
 
-public class MeetingDto
+public class MeetingApiModel
 {
     public Guid Id { get; set; }
     public string Category { get; set; } = null!;

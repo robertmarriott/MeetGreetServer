@@ -1,9 +1,11 @@
 using MediatR;
 using MeetGreetServer.Application.Common.Interfaces;
+using MeetGreetServer.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace MeetGreetServer.Application.MeetGreetServer.Queries.GetMeetings;
 
-public class GetMeetingsQueryHandler : IRequestHandler<GetMeetingsQuery, MeetingsDto>
+public class GetMeetingsQueryHandler : IRequestHandler<GetMeetingsQuery, List<Meeting>>
 {
     private readonly IMeetGreetDbContext _context;
 
@@ -12,8 +14,10 @@ public class GetMeetingsQueryHandler : IRequestHandler<GetMeetingsQuery, Meeting
         _context = context;
     }
 
-    public async Task<MeetingsDto> Handle(GetMeetingsQuery request, CancellationToken cancellationToken)
+    public async Task<List<Meeting>> Handle(GetMeetingsQuery request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return await _context.Meetings
+            .AsNoTracking()
+            .ToListAsync();
     }
 }
