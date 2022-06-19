@@ -1,3 +1,4 @@
+using MeetGreetServer.Application.Common.Interfaces;
 using MeetGreetServer.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,5 +11,7 @@ public static class ConfigureServices
     {
         services.AddDbContext<MeetGreetDbContext>(options =>
             options.UseSqlite(configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddScoped<IMeetGreetDbContext, MeetGreetDbContext>();
     }
 }
