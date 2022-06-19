@@ -1,22 +1,28 @@
+using MediatR;
+using MeetGreetServer.Application.MeetGreetServer.Queries.GetMeetings;
+using MeetGreetServer.Web.ApiModels.Meetings;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetGreetServer.Web.Controllers;
 
-public class MeetingsController : ApiControllerBase
+public class MeetingsController : ControllerBase
 {
-    public MeetingsController()
+    private readonly IMediator _mediator;
+
+    public MeetingsController(IMediator mediator)
     {
+        _mediator = mediator;
     }
 
     [HttpGet]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult<MeetingsApiModel>> Get()
     {
-        return NoContent();
+        var meetings = await _mediator.Send(new GetMeetingsQuery());
     }
 
-    [HttpGet("{id")]
-    public async Task<ActionResult> Get(Guid id)
-    {
-        return NoContent();
-    }
+    // [HttpGet("{id")]
+    // public async Task<ActionResult> Get(Guid id)
+    // {
+    //     return NoContent();
+    // }
 }
