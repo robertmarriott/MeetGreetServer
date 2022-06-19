@@ -1,9 +1,9 @@
-using Meetings.Domain.Entities;
+using MeetGreetServer.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Meetings.Application.Common.Interfaces;
+namespace MeetGreetServer.Application.Common.Interfaces;
 
-public interface IMeetingsContext
+public interface IMeetGreetDbContext
 {
     DbSet<Meeting> Meetings { get; }
 

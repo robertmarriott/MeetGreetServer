@@ -1,4 +1,4 @@
-using Meetings.Infrastructure.Persistence;
+using MeetGreetServer.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -8,7 +8,7 @@ public static class ConfigureServices
 {
     public static void AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<MeetingsContext>(options =>
+        services.AddDbContext<MeetGreetDbContext>(options =>
             options.UseSqlite(configuration.GetConnectionString("DefaultConnection")));
     }
 }

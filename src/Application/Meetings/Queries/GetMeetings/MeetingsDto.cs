@@ -1,6 +1,6 @@
-namespace Meetings.Application.Meetings.Queries.GetMeetings;
+namespace MeetGreetServer.Application.MeetGreetServer.Queries.GetMeetings;
 
 public class MeetingsDto
 {
-    public IList<MeetingDto> Meetings { get; set; } = new List<MeetingDto>();
+    public IList<MeetingDto> MeetGreetServer { get; set; } = new List<MeetingDto>();
 }

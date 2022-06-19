@@ -1,1 +1,1 @@
-global using Meetings.Domain.Entities;
+global using MeetGreetServer.Domain.Entities;

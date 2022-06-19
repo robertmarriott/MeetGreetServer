@@ -1,4 +1,4 @@
-namespace Meetings.Domain.Entities;
+namespace MeetGreetServer.Domain.Entities;
 
 public class Meeting
 {

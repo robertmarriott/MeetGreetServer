@@ -1,14 +1,15 @@
-using Meetings.Domain.Entities;
+using MeetGreetServer.Application.Common.Interfaces;
+using MeetGreetServer.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace Meetings.Infrastructure.Persistence;
+namespace MeetGreetServer.Infrastructure.Persistence;
 
-public class MeetingsContext : DbContext
+public class MeetGreetDbContext : DbContext, IMeetGreetDbContext
 {
     public DbSet<Meeting> Meetings { get; set; } = null!;
 
-    public MeetingsContext(DbContextOptions<MeetingsContext> options) : base(options)
+    public MeetGreetDbContext(DbContextOptions<MeetGreetDbContext> options) : base(options)
     {
     }
 

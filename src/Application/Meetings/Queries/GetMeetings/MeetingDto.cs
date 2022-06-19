@@ -1,4 +1,4 @@
-namespace Meetings.Application.Meetings.Queries.GetMeetings;
+namespace MeetGreetServer.Application.MeetGreetServer.Queries.GetMeetings;
 
 public class MeetingDto
 {

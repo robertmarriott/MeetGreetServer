@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Meetings.Web.Controllers;
+namespace MeetGreetServer.Web.Controllers;
 
 public class MeetingsController : ApiControllerBase
 {
